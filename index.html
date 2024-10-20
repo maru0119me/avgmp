@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画配布サイト</title>
+    <style>
+        /* 広告の共通スタイル */
+        .popup {
+            position: fixed;
+            width: 300px;
+            height: 250px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        /* 左側から出てくる */
+        .popup-left {
+            top: 20px;
+            left: -350px;
+        }
+
+        /* 右側から出てくる */
+        .popup-right {
+            top: 20px;
+            right: -350px;
+        }
+
+        /* 中央から出てくる */
+        .popup-center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        /* 表示されるときの状態 */
+        .show-left {
+            transform: translateX(350px);
+        }
+
+        .show-right {
+            transform: translateX(-350px);
+        }
+
+        .show-center {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* ×ボタンのスタイル */
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* サイトの説明スタイル */
+        .welcome {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 24px;
+        }
+
+        /* サイト遷移ボタンのスタイル */
+        .site-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 2000;
+        }
+    </style>
+    <script>
+        let clickCount = 0;
+
+        // 広告の表示処理
+        function showAd(adNumber, side) {
+            document.getElementById('popup' + adNumber).classList.add('show-' + side);
+        }
+
+        function closeAd(adNumber, side) {
+            document.getElementById('popup' + adNumber).classList.remove('show-' + side);
+        }
+
+        window.onload = function() {
+            setTimeout(() => {
+                showAd(1, 'left'); // 最初の広告を左から表示
+                showAd(2, 'right'); // 2つ目の広告を右から表示
+            }, 1000); // ページ読み込みから1秒後に最初の広告を表示
+        };
+
+        // サイト遷移処理
+        function handleClick() {
+            clickCount++;
+            switch (clickCount) {
+                case 1:
+                    window.location.href = 'https://mttag.com/s/CiZVB7kTGDI'; // 1つ目の動画サイト
+                    break;
+                case 2:
+                    window.location.href = 'https://mttag.com/s/GSGJtTHdqQ8'; // 2つ目の動画サイト
+                    break;
+                case 3:
+                    window.location.href = 'https://mttag.com/s/9wqUORZeW4I'; // 目当ての動画サイト
+                    break;
+                case 4:
+                    window.location.href = 'https://d.kuku.lu/ek5fchjwg'; // 追加の動画サイト
+                    break;
+                default:
+                    clickCount = 0; // クリック数リセット
+            }
+        }
+    </script>
+</head>
+<body>
+
+<!-- サイトの説明 -->
+<div class="welcome">
+    <h1>ようこそ！ここは動画配布サイトです。</h1>
+    <p>このサイトは毎日、または3日ごとに更新されます。</p>
+    <p>このサイトの下のボタンを押すことによって動画を見ることができます！開くと広告に飛ばされることがあります</p>
+</div>
+
+    <a href='https://mttag.com/s/9wqUORZeW4I' rel='nofollow'><img src='https://mttag.com/banner/9wqUORZeW4I' alt='アフィリエイトASPのマネートラック' width='336' height='280' border='0' /></a>
+　
+    <a href='https://mttag.com/s/HiGR4WOEuew' rel='nofollow'><img src='https://mttag.com/banner/HiGR4WOEuew' alt='' width='234' height='60' border='0' /></a
+
+                                                                                                                                                       
+
+    
+<!-- 広告1 (左からスライド) -->
+<div id="popup1" class="popup popup-left">
+    <button class="close-btn" onclick="closeAd(1, 'left')">×</button>
+    <a href='https://mttag.com/s/Zpfy1gln94w' rel='nofollow'>
+        <img src='https://mttag.com/banner/Zpfy1gln94w' alt='' width='100%' height='100%' />
+    </a>
+</div>
+
+<!-- 広告2 (右からスライド) -->
+<div id="popup2" class="popup popup-right">
+    <button class="close-btn" onclick="closeAd(2, 'right')">×</button>
+    <a href='https://mttag.com/s/GSGJtTHdqQ8' rel='nofollow'>
+        <img src='https://mttag.com/banner/GSGJtTHdqQ8' alt='' width='100%' height='100%' />
+    </a>
+
+  
+    
+</div>
+
+<!-- サイト遷移ボタン -->
+<button class="site-btn" onclick="handleClick()">動画を見る</button>
+
+    <a href='https://mttag.com/s/p8RhnJqQBEg' rel='nofollow'><img src='https://mttag.com/banner/p8RhnJqQBEg' alt='Smartlike' width='320' height='250' border='0' /></a>
+    
+</body>
+</html>
